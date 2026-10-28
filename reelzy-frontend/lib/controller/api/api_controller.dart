@@ -7,8 +7,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiController {
-    final String baseUrl = 'https://github.dev';
-
+    final String baseUrl = 'https://nasty-broomstick-5v59wjjg6rr72qpq-3000.app.github.dev';
 
   Future<dynamic> get(String endpoint) async {
     final url = Uri.parse('$baseUrl$endpoint');
