@@ -10,17 +10,17 @@ plugins {
 
 android {
     namespace = "com.example.shorts_app"
-    compileSdk = 35
+    compileSdk = 36 // Plugins වලට අවශ්‍ය පරිදි SDK 36 දක්වා වැඩි කළා
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17 // Java target එක 17 දක්වා වැඩි කළා
+        targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString() // Kotlin JVM target එකත් 17 කළා
     }
 
     defaultConfig {
@@ -29,7 +29,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev.
         minSdk = flutter.minSdkVersion
-        targetSdk = 35
+        targetSdk = 36 // Target SDK එක 36 ලෙස වෙනස් කළා
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
