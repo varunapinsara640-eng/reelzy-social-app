@@ -68,3 +68,4 @@ reelzy-frontend/linux/build/
 .DS_Store?
 Thumbs.db
 desktop.ini
+reelzy-backend/src/firebase-service-account.json
