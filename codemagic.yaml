@@ -2,7 +2,7 @@ workflows:
   flutter-android-build:
     name: Reelzy Android APK Build
     max_build_duration: 60
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     environment:
       flutter: stable
       xcode: latest
@@ -11,16 +11,9 @@ workflows:
       events:
         - push
     scripts:
-      - name: Force Fix Gradle Wrapper and Set local.properties
+      - name: Set up local.properties
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > reelzy-frontend/android/local.properties
-          mkdir -p reelzy-frontend/android/gradle/wrapper
-          rm -f reelzy-frontend/android/gradle/wrapper/gradle-wrapper.properties
-          echo "distributionBase=GRADLE_USER_HOME" > reelzy-frontend/android/gradle/wrapper/gradle-wrapper.properties
-          echo "distributionPath=wrapper/dists" >> reelzy-frontend/android/gradle/wrapper/gradle-wrapper.properties
-          echo "zipStoreBase=GRADLE_USER_HOME" >> reelzy-frontend/android/gradle/wrapper/gradle-wrapper.properties
-          echo "zipStorePath=wrapper/dists" >> reelzy-frontend/android/gradle/wrapper/gradle-wrapper.properties
-          echo "distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.0-bin.zip" >> reelzy-frontend/android/gradle/wrapper/gradle-wrapper.properties
       - name: Get Flutter packages
         script: |
           cd reelzy-frontend
